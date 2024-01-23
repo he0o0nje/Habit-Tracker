@@ -1,53 +1,29 @@
-// import "../styles/HabitListStyle.css";
+import Habits from "./Habits";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 
-function HabitList({ habit }) {
-  const { id, name, count } = habit;
-
+function HabitList({ habits, onPlus, onMinus, onDelete, onDeleteAll }) {
   return (
-    <li style={{ marginBottom: "20px" }}>
-      {/* <span>{name}</span> */}
-      <TextField
-        id="outlined-read-only-input"
-        label="이름"
-        defaultValue={name}
-        InputProps={{
-          readOnly: true,
-        }}
-        sx={{ marginRight: "10px" }}
-      />
-      {/* <span>{count}</span> */}
-      <TextField
-        id="outlined-read-only-input"
-        label="점수"
-        defaultValue={count}
-        InputProps={{
-          readOnly: true,
-        }}
-        sx={{ width: "60px", marginRight: "10px" }}
-      />
+    <>
+      <ul>
+        {habits.map((habit) => (
+          <Habits
+            habit={habit}
+            onPlus={onPlus}
+            onMinus={onMinus}
+            onDelete={onDelete}
+            key={habit.id}
+          />
+        ))}
+      </ul>
       <Button
         variant="contained"
-        sx={{ marginRight: "10px", fontSize: "25px" }}
-      >
-        +
-      </Button>
-      <Button
-        variant="contained"
-        sx={{ marginRight: "10px", fontSize: "25px" }}
-        color="inherit"
-      >
-        -
-      </Button>
-      <Button
-        variant="contained"
-        sx={{ marginRight: "10px", fontSize: "25px" }}
         color="error"
+        sx={{ width: "80%" }}
+        onClick={onDeleteAll}
       >
-        X
+        RESET ALL
       </Button>
-    </li>
+    </>
   );
 }
 

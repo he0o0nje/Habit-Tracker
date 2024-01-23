@@ -1,11 +1,7 @@
 import Root from "./components/Root";
 
 function App() {
-  return (
-    <div className="App">
-      <Root></Root>
-    </div>
-  );
+  return <Root></Root>;
 }
 
 export default App;
