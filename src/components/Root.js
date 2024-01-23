@@ -27,7 +27,7 @@ function Root() {
 
   const handleAddHabit = (name) => {
     const newHabit = {
-      id: habits.length + 1,
+      id: habits.length > 0 ? habits[habits.length - 1].id + 1 : 1,
       name,
       count: 0,
     };
