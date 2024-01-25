@@ -15,6 +15,7 @@ function HabitList({ habits, onPlus, onMinus, onDelete, onDeleteAll }) {
           />
         ))}
       </ul>
+      {/* 데이터가 10만개 있을때도 생각하여 스크롤, 페이징 하는게 좋음 */}
       <Button
         variant="contained"
         color="error"

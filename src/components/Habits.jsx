@@ -10,6 +10,7 @@ function Habits({ habit, onPlus, onMinus, onDelete }) {
         defaultValue={habit.name}
         InputProps={{
           readOnly: true,
+          // style: {marginBottom: "10px"} 여기에 스타일링 가능 ✔️
         }}
         sx={{ marginRight: "10px" }}
       />
