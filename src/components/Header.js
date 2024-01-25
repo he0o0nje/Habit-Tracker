@@ -1,8 +1,8 @@
 function Header({ totalCount }) {
   return (
     <>
-      <h2>Habit Tracker</h2>
-      <div style={{ marginBottom: "20px" }}>Total = {totalCount}</div>
+      <h2>👀Habit Tracker👀</h2>
+      <div style={{ marginBottom: "30px" }}>Total = {totalCount}</div>
     </>
   );
 }

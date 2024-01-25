@@ -3,6 +3,7 @@
   margin: 10px auto;
   padding: 20px;
   border: 1px solid rgb(0, 0, 180);
+  border-radius: 30px;
   text-align: center;
 }
 ul {
