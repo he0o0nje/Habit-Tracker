@@ -26,12 +26,18 @@ function Root() {
   const totalCount = habits.filter((habit) => habit.count > 0).length;
 
   const handleAddHabit = (name) => {
-    const newHabit = {
-      id: habits.length > 0 ? habits[habits.length - 1].id + 1 : 1,
-      name,
-      count: 0,
-    };
-    setHabits([...habits, newHabit]);
+    const isNameExist = habits.some((habit) => habit.name === name);
+
+    if (!isNameExist) {
+      const newHabit = {
+        id: habits.length > 0 ? habits[habits.length - 1].id + 1 : 1,
+        name,
+        count: 0,
+      };
+      setHabits([...habits, newHabit]);
+    } else {
+      alert(`${name} is already exist`);
+    }
   };
 
   const handlePlus = (id) => {
