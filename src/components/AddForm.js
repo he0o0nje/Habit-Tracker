@@ -13,12 +13,19 @@ function AddForm({ onAdd }) {
     }
   };
 
+  const enterKey = (event) => {
+    if (event.keyCode === 13) {
+      handleAdd();
+    }
+  };
+
   return (
     <>
       <TextField
         label="Habit"
         sx={{ width: "80%", marginBottom: "10px" }}
         inputRef={inputRef}
+        onKeyUp={enterKey}
       ></TextField>
       <Button
         variant="contained"
