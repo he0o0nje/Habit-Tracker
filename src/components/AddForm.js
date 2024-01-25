@@ -10,6 +10,9 @@ function AddForm({ onAdd }) {
     if (habitName.trim() !== "") {
       onAdd(habitName);
       inputRef.current.value = "";
+    } else if (inputRef.current.value === "") {
+      alert("Habit을 입력해주세요");
+      inputRef.current.focus();
     }
   };
 
