@@ -8,7 +8,7 @@ function HabitList({ habits, onPlus, onMinus, onDelete, onDeleteAll }) {
         style={{
           overflowY: habits.length > 7 ? "scroll" : "hidden",
           paddingTop: "10px",
-          maxHeight: "550px",
+          maxHeight: "530px",
         }}
       >
         {habits.map((habit) => (
@@ -25,7 +25,11 @@ function HabitList({ habits, onPlus, onMinus, onDelete, onDeleteAll }) {
       <Button
         variant="contained"
         color="error"
-        sx={{ width: "80%", marginTop: "10px" }}
+        sx={{
+          width: "80%",
+          marginTop: habits.length === 0 ? "-15px" : "10px",
+          marginBottom: "20px",
+        }}
         onClick={onDeleteAll}
       >
         RESET ALL
