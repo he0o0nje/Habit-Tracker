@@ -36,7 +36,7 @@ function Root() {
       };
       setHabits([...habits, newHabit]);
     } else {
-      alert(`${name} is already exist`);
+      alert(`중복된 Habit이 있습니다.`);
     }
   };
 

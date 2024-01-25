@@ -1,9 +1,13 @@
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function AddForm({ onAdd }) {
   const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleAdd = () => {
     const habitName = inputRef.current.value;
@@ -11,14 +15,15 @@ function AddForm({ onAdd }) {
       onAdd(habitName);
       inputRef.current.value = "";
     } else if (inputRef.current.value === "") {
-      alert("Habit을 입력해주세요");
-      inputRef.current.focus();
+      alert("Habit을 입력해주세요.");
     }
+    inputRef.current.focus();
   };
 
   const enterKey = (event) => {
     if (event.keyCode === 13) {
       handleAdd();
+      inputRef.current.focus();
     }
   };
 
