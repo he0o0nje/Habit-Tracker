@@ -41,7 +41,7 @@ function AddForm({ onAdd }) {
       ></TextField>
       <Button
         variant="contained"
-        sx={{ width: "80%", marginBottom: "20px" }}
+        sx={{ width: "80%", marginBottom: "15px" }}
         onClick={handleAdd}
       >
         ADD
